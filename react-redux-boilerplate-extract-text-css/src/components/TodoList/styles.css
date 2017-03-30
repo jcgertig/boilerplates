@@ -1,0 +1,20 @@
+.TodoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.TodoListItem {
+  cursor: pointer;
+  display: flex;
+
+  &:hover {
+    background-color: $carrot;
+  }
+
+  &.is_complete {
+    text-decoration: line-through;
+  }
+}

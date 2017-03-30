@@ -1,0 +1,16 @@
+.SubmitInputWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.SubmitInput {
+  display: flex;
+  flex: 8;
+  border-radius: 0;
+  margin: 0;
+}
+
+.SubmitButton {
+  border-radius: 3px;
+  margin: 0;
+}
