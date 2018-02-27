@@ -1,12 +1,14 @@
+/* global System */
 import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
 
+import asyncComponent from '../../lib/utils/asyncComponent';
 import styles from './styles.css';
 
-const Home = asyncComponent(() => System.import('views/Home').then(module => module.default));
+const Home = asyncComponent(() => System.import('views/Home'));
 
 const AppEntry = () => (
   <Router>

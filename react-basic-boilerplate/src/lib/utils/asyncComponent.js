@@ -7,15 +7,16 @@ const isServer = () => !(typeof window !== 'undefined' && window.document);
 // use with () => System.import('path').then(module => module.default)
 export default function asyncComponent(getComponent) {
   return class AsyncComponent extends React.Component {
-
     state = { Component: AsyncComponent.Component };
 
     componentWillMount() {
       if (!this.state.Component) {
-        getComponent().then((Component) => {
-          AsyncComponent.Component = Component;
-          this.setState({ Component });
-        });
+        getComponent()
+          .then(module => module.default)
+          .then((Component) => {
+            AsyncComponent.Component = Component;
+            this.setState({ Component });
+          });
       }
     }
 

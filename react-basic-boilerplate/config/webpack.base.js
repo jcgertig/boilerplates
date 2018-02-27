@@ -43,7 +43,7 @@ module.exports = {
             options: {
               plugins: () => [
                 precss({
-                  variables: { variables: styleVars },
+                  variables: styleVars,
                 }),
                 autoprefixer,
               ],
